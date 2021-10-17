@@ -26,11 +26,13 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Deploy a Cloud Run service
+        env:
+          SERVICE_NAME: streamlit-sample-ohtani-san
         id: deploy-service
         uses: google-github-actions/deploy-cloudrun@main
         with:
-          image: asia.gcr.io/${{ secrets.GCP_PROJECT_ID }}/${{ secrets.GCP_SERVICE_NAME }}
-          service: ${{ secrets.GCP_SERVICE_NAME }}
+          image: asia.gcr.io/${{ secrets.GCP_PROJECT_ID }}/${{ env.SERVICE_NAME }}
+          service: ${{ env.SERVICE_NAME }}
           region: asia-northeast1
           project_id: ${{ secrets.GCP_PROJECT_ID }}
           credentials: ${{ secrets.GCP_SA_KEY }}
