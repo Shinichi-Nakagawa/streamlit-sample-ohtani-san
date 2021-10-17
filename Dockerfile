@@ -17,3 +17,4 @@ ADD interfaces interfaces
 ADD model model
 ADD usecase usecase
 CMD streamlit run app.py
+EXPOSE 8080:8501
