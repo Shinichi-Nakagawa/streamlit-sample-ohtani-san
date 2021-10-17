@@ -2,6 +2,8 @@
 
 [Streamlit](https://www.streamlit.io/)をサクッと使うためのサンプルアプリケーションです.
 
+[PyCon JP 2021](https://2021.pycon.jp/)「[実践Streamlit & Flask - AIプロジェクトをいい感じにする技術](https://speakerdeck.com/shinyorke/service-development-with-streamlit-and-flask)」にて披露したアプリケーションでもあります.
+
 ![](document/img/sample.png)
 
 ## Licence
@@ -10,7 +12,7 @@ MIT
 
 ## 利用方法
 
-forkして好きなアプリケーションに作り変えることを推奨します.
+このリポジトリをforkもしくはダウンロードして好きなアプリケーションに作り変えることを推奨します.
 
 学習や仕事, 個人開発などお好きな目的・利用スタイルで使っていただいて構いません.
 
@@ -64,6 +66,8 @@ deployを動かすためには以下のsecretsを設定する必要がありま�
 - GCP_SA_KEY(必要な権限を持ったCredential JSON)
 
 詳細は[deploy-cloudrun](https://github.com/google-github-actions/deploy-cloudrun)を御覧ください.
+
+なお, Cloud Run環境は最初に作る必要があります（上記[deploy.sh](deploy.sh)を実行するのが手っ取り早いかも).
 
 # Maintainer
 
