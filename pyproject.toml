@@ -1,6 +1,6 @@
 [tool.poetry]
-name = "ohtani-hr-predict"
-version = "0.1.0"
+name = "streamlit-sample-ohtani-san"
+version = "1.0.0"
 description = ""
 authors = ["shinyorke <spirits.is.my.rader@gmail.com>"]
 
@@ -8,7 +8,6 @@ authors = ["shinyorke <spirits.is.my.rader@gmail.com>"]
 python = "^3.9"
 scikit-learn = "^0.24.2"
 pandas = "^1.3.3"
-jupyterlab = "^3.1.12"
 streamlit = "^0.88.0"
 joblib = "^1.0.1"
 Pillow = "^8.3.2"
