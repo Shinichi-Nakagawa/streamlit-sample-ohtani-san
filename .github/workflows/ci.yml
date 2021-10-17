@@ -1,0 +1,36 @@
+name: CI
+on: push
+jobs:
+  test:
+    name: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Install
+        uses: abatilo/actions-poetry@v1.5.0
+        with:
+          python_version: 3.9.7
+          poetry_version: 1.1.7
+          args: install
+      - name: Run pytest
+        uses: abatilo/actions-poetry@v1.5.0
+        with:
+          python_version: 3.9.7
+          poetry_version: 1.1.7
+          args: run python -m pytest .
+  deploy:
+    name: Deploy
+    needs: test
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Deploy a Cloud Run service
+        id: deploy-service
+        uses: google-github-actions/deploy-cloudrun@main
+        with:
+          image: asia.gcr.io/${{ secrets.GCP_PROJECT_ID }}/${{ secrets.GCP_SERVICE_NAME }}
+          service: ${{ secrets.GCP_SERVICE_NAME }}
+          region: asia-northeast1
+          project_id: ${{ secrets.GCP_PROJECT_ID }}
+          credentials: ${{ secrets.GCP_SA_KEY }}

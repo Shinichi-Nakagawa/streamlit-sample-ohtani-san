@@ -1,0 +1,7 @@
+version: "2.0"
+services:
+  app:
+    build: .
+    ports:
+      - 8080:8501
+    container_name: streamlit_sample_ohtani

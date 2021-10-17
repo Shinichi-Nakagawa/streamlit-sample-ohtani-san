@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "ohtani-hr-predict"
+version = "0.1.0"
+description = ""
+authors = ["shinyorke <spirits.is.my.rader@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+scikit-learn = "^0.24.2"
+pandas = "^1.3.3"
+jupyterlab = "^3.1.12"
+streamlit = "^0.88.0"
+joblib = "^1.0.1"
+Pillow = "^8.3.2"
+
+[tool.poetry.dev-dependencies]
+watchdog = "^2.1.5"
+pytest = "^6.2.5"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
