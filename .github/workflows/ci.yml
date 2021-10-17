@@ -34,3 +34,4 @@ jobs:
           region: asia-northeast1
           project_id: ${{ secrets.GCP_PROJECT_ID }}
           credentials: ${{ secrets.GCP_SA_KEY }}
+          port: 8501
