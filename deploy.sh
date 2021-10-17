@@ -1,8 +1,8 @@
 project=$1
-service=$2
+
 # image build
-gcloud builds submit --tag asia.gcr.io/${project}/${service}
+gcloud builds submit --tag asia.gcr.io/${project}/streamlit-sample-ohtani-san
 
 # deploy
-gcloud run deploy --image asia.gcr.io/${project}/${service} --platform managed --memory 512M --region asia-northeast1 --port 8501
+gcloud run deploy --image asia.gcr.io/${project}/streamlit-sample-ohtani-san --platform managed --memory 512M --region asia-northeast1 --port 8501
 

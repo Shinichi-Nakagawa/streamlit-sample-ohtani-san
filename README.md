@@ -51,10 +51,8 @@ docker-compose -f docker-compose-local.yml up
 `gcloud`コマンドを手元で使えるようにした上で
 
 ```bash
-sh deploy.sh ${gcp project id} ${your service name}
+sh deploy.sh ${gcp project id}
 ```
-
-`your service name` で指定した名前でCloud Runのサービスが作られます.
 
 ### CI(GitHub Actions)
 
